@@ -1,0 +1,441 @@
+---
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    incremental: true 
+    logo: img/PGEforge_hex.png
+    # footer: "[shaziaruybal.github.io/pgeforge_rladiesmelb](shaziaruybal.github.io/pgeforge_rladiesmelb.html)" 
+---
+
+# PGEforge: {.inverse}
+
+<h3>*Towards an open analysis ecosystem for malaria genomic epidemiology*</h3>
+<br>
+Dr Shazia Ruybal-Pesántez 
+
+<br><br>
+R-Ladies Melbourne Meetup \| 3rd April 2025 
+
+# Outline {.inverse}
+- Why? Background on malaria, surveillance and genomic epidemiology
+- What? Gaps in current landscape
+- Who/How? Hackathon + Quarto = PGEforge ✨
+- Where to now?
+
+# Background {.inverse}
+
+## Malaria is a major public health priority {.smaller}
+
+:::: {.columns}
+
+::: {.column width="30%"}
+<br>
+
+* Infectious disease caused by *Plasmodium* parasites transmitted by *Anopheles* mosquito
+* Endemic in 83 countries (half the world's population is at risk)
+* 263 million cases and 597,000 deaths in 2023^[[World Malaria Report 2024](https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-spreadview.pdf?sfvrsn=3ccb3695_3)]
+* WHO global malaria strategy targets [are not on track]{.fragment .highlight-red}
+
+:::
+
+::: {.column width="70%"}
+<br><br>
+![](img/global_trends.png)
+:::
+
+::::
+
+## Emerging threats to malaria control and elimination targets {.smaller}
+
+::::: {.columns}
+
+:::: {.column width="50%" .fragment}
+<br><br>
+
+Antimalarial resistance emerging^[[Rosenthal et al 2024](https://doi.org/10.1016/S1473-3099(24)00141-5)]
+![](img/art-r.png)
+
+::::
+
+::::{.column width="50%" .fragment}
+<br><br>
+
+Mosquito vector spreading^[[Emiru et al 2023](https://doi.org/10.1038/s41591-023-02641-9)]
+![](img/stephensi.png)
+
+::::
+
+:::::
+
+## Fragile global health funding landscape {.smaller}
+
+![](img/funding_cuts.png){width="90%"}
+<br>
+*Cases and deaths expected to increase (modelled estimates of ≥14.9 million^[[Symons et al 2025](https://doi.org/10.1101/2025.02.28.25323072)] and ≥84,000^[[Winskill et al 2025](https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/publications/?respub-action=search.html&id=1073&resgrpMemberPubs=true&limit=10&iminyear=1972&imaxyear=2025&itypes=Book%2CBook%20chapter%2CConference%20paper%2CJournal%20article%2COther%2CPatent%2CPoster%2CReport%2CScholarly%20edition%2CSoftware%2CThesis%20dissertation%2CWorking%20paper&_type=on&keywords=winskill&type=Report&minyear=2025&maxyear=2025&page=1)] potential additional cases)*
+
+## WHO technical strategy and surveillance {.smaller}
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](img/who_strategy.png)
+:::
+
+::: {.column width="60%"}
+
+**Strategic framework includes 3 key pillars^[[WHO Global Technical strategy for Malaria 2016-2030](https://doi.org/10.1016/S1473-3099(24)00141-5)]**
+<br>
+
+1. Ensure access to malaria prevention, diagnosis and treatment as part of universal health
+coverage
+2. Accelerate efforts towards elimination and attainment of malaria-free status
+3. Transform [malaria surveillance into a key intervention]{.fragment .highlight-red}
+
+:::
+
+::::
+
+## Pathogen genomic surveillance has gained traction
+
+* COVID-19 led to rapid scale-up of sequencing infrastructure
+* Newly established networks strongly advocate for use of pathogen genomics for public health decision-making
+* Focus on pathogens with pandemic potential but also controlling endemic diseases (HIV, TB, malaria)
+
+  ![](img/ipsn_logo.png){width="50%"}
+
+# What do we aspire to? {.inverse}
+
+## An ideal framework for malaria genomic epidemiology {background-image="img/ideal_framework.png" background-position="center" background-size="auto 65%"}
+
+:::{.aside}
+[Ruybal-Pesántez et al 2025](https://doi.org/10.1101/2025.04.01.25325032)
+:::
+
+:::{.notes}
+Model for an ideal genomic epidemiology framework involving public health stakeholders and scientists. This framework outlines the iterative cycle of malaria genomic epidemiology, integrating public health priority questions, data collection and generation, genetic data analysis, and synthesis and interpretation to inform malaria control and elimination policy. The process begins with defining public health questions relevant to national malaria control and elimination programmes, such as whether cases are imported or locally acquired, whether HRP2-based rapid diagnostic tests (RDTs) should continue to be used, or whether frontline antimalarial drugs remain effective. Next, data collection involves appropriate study design and sample types, as well as contextual data, for example demographic information or travel history data. Subsequently, data generation will involve sequencing and bioinformatic processing, as well as epidemiological and clinical data, such as light microscopy and PCR diagnosis of malaria infections. Robust data standards would enable harmonization of downstream analysis of genetic data. This stage includes derivation of key metrics from genetic data, such as allele frequencies and complexity of infection (COI), requiring accessible analysis software. The results are then synthesized and interpreted by integrating genetic, clinical, epidemiological and surveillance data to extract relevant insights and determine appropriate courses of action. Findings are then communicated to public-health decision makers and programme officers, guiding intervention strategies and informing further research questions, thereby continuing the cycle. 
+:::
+
+# What is the current landscape in malaria genomic surveillance? {.inverse}
+
+## Major advances in sequencing, bioinformatics and analytical tools
+
+
+![](img/genomics_pubs.png){width="70%"}
+
+:::{.aside}
+[Neafsey et al 2021](https://doi.org/10.1038/s41576-021-00349-5)
+:::
+
+## How can genetic epidemiology be applied to support malaria programmes? 
+![](img/use_cases.png)
+
+:::{.aside}
+[Dalmat et al 2019](https://doi.org/10.1186/s12936-019-2784-0)
+:::
+
+## Recent efforts to provide guidance {.smaller}
+
+:::: {.columns}
+
+::: {.column width="28%" .fragment}
+<br><br>
+How should we sample?^[[Mayor et al 2023](https://doi.org/10.1016/j.pt.2023.08.007)] 
+
+![](img/sampling_trends.png)
+:::
+
+::: {.column width="28%" .fragment}
+<br><br>
+What molecular markers should we use?^[[Ruybal-Pesántez et al 2024](https://doi.org/10.1016/j.pt.2023.11.006)] 
+
+![](img/markers_trends.png)
+:::
+
+::: {.column width="44%" .fragment}
+<br><br>
+How can we use molecular data?^[[Golumbeanu et al 2025]()] 
+
+![](img/gaps_ajtmh.png)
+:::
+::::
+
+## What are the gaps?
+- Many existing software tools to analyze data for malaria genomic surveillance
+  - *Little guidance on how to choose, use, or assemble these tools to translate genetic data into interpretable and actionable results*
+
+- Lack of standardization of software tools, inputs and outputs
+- Tools often have limited usability by end-users:
+  - *Inadequate documentation*
+  - *Installation difficulties (eg OS, C++ compilers, dependencies)*
+  - *Non-standardized input formats*
+
+# A community-led effort towards an open analysis ecosystem {.inverse}
+
+# RADISH23 ![a cute radish](https://mrc-ide.github.io/PGEforge/website_docs/img/radish.png){width=60px}![](https://r-universe.dev/avatars/plasmogenepi.png?size=248){width="60px"}
+
+The **R**eproducibility, **A**ccessibility, **D**ocumentation and **I**nter-operability **S**tandards **H**ackathon (RADISH23) 
+
+*18 subject matter experts across 15 institutions convened by the PlasmoGenEpi network*
+
+<br><br>
+<span style="color: #C82F61;">Goal: take the wide range of software tools in malaria genomic epidemiology and make them easier and more straightforward to use</span>
+
+## The awesome RADISH23 hackers ![a cute radish](https://mrc-ide.github.io/PGEforge/website_docs/img/radish.png){width=60px} {background-image="img/radish23_group_photo.jpg" background-size="cover" background-color="black"}
+
+## Hackathon goals
+- Pre hackathon:
+  - Compiled simulated and empirical datasets of genomic data in common input formats
+  - Scoping and landscaping of available analysis tools (preliminary evaluation to prioritize)
+    
+    ![](img/landscaping.png){width="60%"}
+
+::: {.notes}
+  - Preliminary evaluation (eg identify tools that are superseded or no longer maintained)
+  - Selected 'priority' tools for resource development
+  
+:::
+
+## Hackathon goals
+- Hackathon (4 days)
+  - Material development for each priority tool (each hacker assigned 1-2 tools)
+    1. Tool information
+    2. Installation aids
+    3. Reproducible tutorial using canonical datasets
+  - Break-out discussions and analysis workflows
+  - Manuscript writing team
+
+## Hackers in action
+
+![](img/hackathon.jpg)
+
+# Shoutout to Notion! ![notion](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png){width=60px} {.inverse}
+![](img/notion.png)
+
+# How did we use quarto? {.inverse}
+![](img/quarto.png)
+
+::: aside
+  *Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.*
+:::
+
+## Github repository and website
+
+```
+PGEforge/
+├── .github/
+├── _freeze/
+├── _site/
+├── data/
+├── references/
+├── tutorials/
+├── website_docs/
+├── .gitignore
+├── .nojekyll
+├── LICENSE
+├── README.md
+├── _quarto.yml
+└── index.qmd
+```
+
+![github](https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png){width=40px} [PGEforge Github repo](https://github.com/mrc-ide/PGEforge)
+
+:::{.notes}
+- Mention tutorials folder (branch for each tutorial)
+- Website from root - build automatically with every update
+
+:::
+
+## Contribution guidelines
+
+- Main and develop branches
+
+- Branch + pull requests
+
+  ![](img/pr.png){width="500px"}
+
+# Quarto website for all our community resources {.inverse}
+
+## [PGEforge website](https://mrc-ide.github.io/PGEforge/) 
+![](img/website.png)
+
+# A quick tour of PGEforge {.inverse}
+
+## PlasmoGenEpi R-universe {.smaller}
+We have our own PlasmoGenEpi "CRAN"! 
+
+![](img/universe.png)
+
+:::{.aside}
+*Shoutout to [rOpenSci](https://ropensci.org/r-universe/)*
+:::
+
+## Easier installation
+<br><br>
+
+Installation for R packages now possible with one line of code:
+
+```
+# Install 'DRpower' in R:
+install.packages('DRpower', 
+                 repos = c('https://plasmogenepi.r-universe.dev', 
+                           'https://cloud.r-project.org'))
+```
+<br><br>
+*Particularly useful for R packages that have dependencies or require a C compiler*
+
+## Landscaping of analysis tools
+![](img/landscaping_matrix.png)
+
+## Software standards
+Measurable criteria to evaluate comprehensiveness of documentation, quality assurance, maintenance
+
+::::{.columns}
+
+:::{.column width="50%" .fragment}
+Required software standards
+![](img/stds.png)
+:::
+
+:::{.column width="50%" .fragment}
+*"Nice to have" software standards*
+![](img/additional_stds.png)
+:::
+
+::::
+
+## Tool evaluation {.smaller}
+::::{.columns}
+
+:::{.column width="20%"}
+Every criteria is scored on the following scale:
+  
+ - 0: Criteria not fulfilled
+ - 1: Criteria fulfilled but not entirely
+ - 2: Criteria fulfilled
+:::
+
+:::{.column width="80%" .fragment}
+![](img/tool_eval.png)
+:::
+
+::::
+
+:::{.notes}
+The criteria are then translated to an end-user score and development score for the tool. Overall, user-oriented software standards were generally met more consistently than developer-oriented standards
+
+:::
+
+## Reproducible tutorials for each tool {.smaller}
+::::{.columns}
+
+:::{.column width="20%"}
+- Use standardized datasets available in PGEforge to ensure reproducibility
+- Take the user from installation, through to analysis, through to visualization
+:::
+
+:::{.column width="80%"}
+![](img/moire_tutorial.png)
+:::
+
+::::
+
+
+# Ok, so we've improved tool usability. Now what? {.inverse}
+
+---
+
+::::{.columns}
+
+:::{.column width="30%"}
+Defined eight use cases for malaria genomic surveillance considering analysis requirements^[[Ruybal-Pesántez et al 2025](https://doi.org/10.1101/2025.04.01.25325032)]
+:::
+
+:::{.column width="70%" .fragment}
+![](img/functionalities.png){width="80%"}
+:::
+
+:::{.notes}
+1. Identifying the molecular mechanism/origin of drug and diagnostic resistance
+2. Monitoring the prevalence/frequency of drug or diagnostic resistance markers
+3. Measuring human immune selection on the parasite population
+4. Classifying outcomes in therapeutic efficacy studies (TESs) as reinfection, recrudescence or, in the case of P. vivax, relapse:
+5. Estimating transmission intensity
+6. Estimating the connectivity and movement of parasites between geographically distinct populations
+7. Classifying malaria cases as locally acquired or imported from another population
+8. Reconstructing granular patterns of transmission
+:::
+
+::::
+
+# How will this be translated to support translation of genomic data for decision making? {.inverse .smaller}
+
+## Analysis workflow example {.smaller}
+We need to 'chain' tools/functionalities together to answer questions relevant to malaria control
+
+::::{.columns}
+
+:::{.column width="80%"}
+![](img/COI_workflow.png)
+
+:::
+
+:::{.column width="20%"}
+- Question: How prevalent is parasite drug resistance in my region?
+- We now know what tools are available that do those functionalities
+- 'Chaining' tools together may often require extra steps (eg bespoke code or utility functions)
+:::
+
+::::
+
+
+# Before wrapping up - some reflections... {.inverse}
+
+## It takes a village to raise a platform like PGEforge!
+- Hackathons where large group of advanced coders could get through many tedious tasks
+  - no one person could realistically do this (*BOE calculation: >500 person-hours! = >3 months full time for one person*)
+  
+- Landscaping + mapping out tools to functionalities + use cases allowed us to define what tools needs to be chained together to answer specific questions relevant to malaria control and elimination strategies
+
+- PGEforge set the stage for future work towards an open analysis ecosystem built around good software and best practices for data analysis
+
+:::{.notes}
+For each use case, we mapped out workflows with respect to the flow of information through each analysis functionality. In combination with tool landscaping, each step of the workflows can be mapped flexibly to any available and future tools.
+:::
+
+## What's in store next? 
+- WASABI25 (**W**orkflows for **A**mplicon **S**equencing **A**nalytics and **Bi**oInformatics)
+  - Hackathon 'model' was repeated in January 2025
+  - Focused on building end-to-end pipelines for the workflows we outlined previously 
+<br>
+- Benchmarking tools towards best practices guidelines (*ongoing*)
+  - Evaluate tool performance for given functionalities and use cases and their outputs against known truths
+<br>
+- Visualizations as next step to workflows to support appropriate interpretation and translation of analysis outputs (*ongoing*)
+
+## It takes a village to raise PGEforge! {background-image="img/thanks.png" background-position="bottom" background-size="auto 80%"}
+_**Many** thanks to everyone involved._ 
+
+# Get in touch!
+
+[s.ruybal@imperial.ac.uk](mailto:s.ruybal@imperial.ac.uk)
+
+<br>
+<h3> Links to resources: </h3>
+
+<span style="display: inline-flex; align-items: center; gap: 5px; margin-bottom: 10px;">
+  <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="25px">
+  <a href="https://github.com/mrc-ide/PGEforge">PGEforge Github repo</a>
+</span><br>
+
+<span style="display: inline-flex; align-items: center; gap: 5px; margin-bottom: 10px;">
+  <img src="https://mrc-ide.github.io/PGEforge/website_docs/img/PGEforge_hex.png" width="25px">
+  <a href="https://mrc-ide.github.io/PGEforge/">PGEforge website</a>
+</span><br>
+
+<span style="display: inline-flex; align-items: center; gap: 5px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/MedRxiv_homepage_logo.png" width="25px">
+  <a href="https://doi.org/10.1101/2025.04.01.25325032">PGEforge pre-print</a>
+</span>
+
+<br>
+<span style="color: #88398A"> *Thanks to R-Ladies Melbourne for inviting me to speak 💜*</span>
